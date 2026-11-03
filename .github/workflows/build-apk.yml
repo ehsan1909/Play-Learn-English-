@@ -25,12 +25,12 @@ jobs:
           gradle-version: '8.13'
 
       - name: Build Android APK
-        working-directory: PlayAndLearnAndroid
+        working-directory: PlayAndLearnAndroid-v2/PlayAndLearnAndroid
         run: gradle assembleDebug --no-daemon
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: PlayAndLearn-English-APK
-          path: PlayAndLearnAndroid/app/build/outputs/apk/debug/*.apk
+          path: PlayAndLearnAndroid-v2/PlayAndLearnAndroid/app/build/outputs/apk/debug/*.apk
           if-no-files-found: error
